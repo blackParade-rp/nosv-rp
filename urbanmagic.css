@@ -2071,3 +2071,239 @@
     font-size: 21px;
   }
 }
+
+
+/* ========================================
+   URBAN MAGIC — CRONOLOGÍA GLOBAL
+   ======================================== */
+
+.um-cron-global {
+  --uc-acento: var(--grupcolor, var(--color2, #55e073));
+
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 650px;
+  margin: 20px auto;
+  padding: 30px;
+  overflow: hidden;
+
+  background: var(--fondo1, #080808db);
+  border: 1px solid #ffffff18;
+  border-top: 3px solid var(--uc-acento);
+  border-radius: 10px;
+
+  color: var(--textobase, #cfcfcf);
+  font-family: var(--fuente3, Caladea, serif);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.um-cron-global *,
+.um-cron-global *::before,
+.um-cron-global *::after {
+  box-sizing: border-box;
+}
+
+/* Cabecera oficial */
+
+.um-cron-cabecera {
+  position: relative;
+  margin-bottom: 18px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid #ffffff20;
+}
+
+.um-cron-codigo {
+  display: block;
+  margin-bottom: 10px;
+  color: var(--uc-acento);
+  font: 9px var(--fuente1, monospace);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.um-cron-titulo {
+  margin: 0 0 7px;
+  color: var(--uc-acento);
+  font: normal 35px/1.2 var(--fuente2, sans-serif);
+}
+
+.um-cron-subtitulo {
+  color: #bcbcbc;
+  font: italic 16px/1.5 var(--fuente3, serif);
+}
+
+.um-cron-intro {
+  margin: 0 0 22px;
+  text-align: justify;
+}
+
+.um-cron-intro p {
+  margin: 0 0 10px;
+}
+
+/* Separador de meses */
+
+.um-cron-mes {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 24px 0 17px;
+}
+
+.um-cron-mes span {
+  flex-shrink: 0;
+  padding: 6px 12px;
+  background: var(--uc-acento);
+  color: #080808;
+  font: bold 10px/1.4 var(--fuente1, monospace);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.um-cron-mes::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--uc-acento);
+  opacity: .45;
+}
+
+/* Acontecimientos */
+
+.um-cron-evento {
+  display: flex;
+  align-items: stretch;
+  gap: 15px;
+  margin-bottom: 22px;
+}
+
+.um-cron-fecha {
+  flex: 0 0 50px;
+  padding-top: 2px;
+  text-align: center;
+  font-family: var(--fuente1, monospace);
+}
+
+.um-cron-fecha strong {
+  display: block;
+  color: var(--uc-acento);
+  font-size: 25px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.um-cron-fecha small {
+  display: block;
+  margin-top: 3px;
+  color: #aaaaaa;
+  font-size: 9px;
+  text-transform: uppercase;
+}
+
+.um-cron-evento-info {
+  flex: 1;
+  min-width: 0;
+  padding: 2px 0 0 16px;
+  border-left: 2px solid var(--uc-acento);
+}
+
+.um-cron-evento-titulo {
+  margin: 0 0 5px;
+  color: #eeeeee;
+  font: normal 22px/1.25 var(--fuente2, sans-serif);
+  overflow-wrap: anywhere;
+}
+
+.um-cron-evento-tipo {
+  display: block;
+  margin-bottom: 10px;
+  color: var(--uc-acento);
+  font: 9px/1.5 var(--fuente1, monospace);
+  letter-spacing: .7px;
+  text-transform: uppercase;
+}
+
+.um-cron-evento-texto {
+  color: var(--textobase, #cfcfcf);
+  font-size: 13px;
+  line-height: 1.7;
+  text-align: justify;
+}
+
+.um-cron-evento-texto p {
+  margin: 0 0 10px;
+}
+
+.um-cron-evento-texto p:last-child {
+  margin-bottom: 0;
+}
+
+/* Énfasis dentro de las descripciones */
+
+.um-cron-evento-texto b,
+.um-cron-evento-texto strong {
+  color: var(--uc-acento);
+}
+
+.um-cron-evento-texto i,
+.um-cron-evento-texto em {
+  font-style: italic;
+  text-decoration: underline;
+  text-decoration-color: var(--uc-acento);
+  text-underline-offset: 3px;
+}
+
+/* Pie de archivo */
+
+.um-cron-pie {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 22px;
+  padding-top: 14px;
+  border-top: 1px solid #ffffff20;
+
+  color: #999999;
+  font: 9px var(--fuente1, monospace);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.um-cron-pie span:last-child {
+  color: var(--uc-acento);
+}
+
+/* Adaptación móvil */
+
+@media (max-width: 480px) {
+  .um-cron-global {
+    padding: 18px;
+  }
+
+  .um-cron-titulo {
+    font-size: 28px;
+  }
+
+  .um-cron-evento {
+    gap: 9px;
+  }
+
+  .um-cron-fecha {
+    flex-basis: 40px;
+  }
+
+  .um-cron-fecha strong {
+    font-size: 21px;
+  }
+
+  .um-cron-evento-info {
+    padding-left: 11px;
+  }
+
+  .um-cron-evento-titulo {
+    font-size: 19px;
+  }
+}
