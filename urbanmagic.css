@@ -442,3 +442,420 @@
     padding: 10px 8px;
   }
 }
+
+
+/* ==========================================
+   URBAN MAGIC — SISTEMA DE MÓVILES
+   ========================================== */
+
+.um-phone {
+  --phone-acento: var(--grupcolor, var(--color2));
+  --phone-fondo: #0d100f;
+  --phone-texto: var(--textobase, #cfcfcf);
+
+  box-sizing: border-box;
+  position: relative;
+  width: 300px;
+  max-width: 100%;
+  height: 540px;
+  margin: 25px auto;
+  padding: 10px;
+  overflow: hidden;
+
+  background: #050606;
+  border: 3px solid #303633;
+  border-radius: 38px;
+  box-shadow:
+    0 15px 40px #00000080,
+    0 0 15px #00000060,
+    inset 0 0 0 1px #ffffff12;
+
+  color: var(--phone-texto);
+  font-family: var(--fuente1, monospace);
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.um-phone *,
+.um-phone *::before,
+.um-phone *::after {
+  box-sizing: border-box;
+}
+
+.um-phone-screen {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 29px;
+  background: var(--phone-fondo);
+}
+
+/* Cámara frontal */
+.um-phone-camera {
+  position: absolute;
+  z-index: 20;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 76px;
+  height: 19px;
+  background: #010202;
+  border-radius: 20px;
+}
+
+.um-phone-camera::after {
+  content: "";
+  position: absolute;
+  right: 11px;
+  top: 7px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #1d343c;
+}
+
+/* Barra de estado */
+.um-phone-status {
+  position: absolute;
+  z-index: 10;
+  top: 11px;
+  left: 17px;
+  right: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #eeeeee;
+  font-size: 9px;
+  font-weight: bold;
+}
+
+/* Barra inferior */
+.um-phone-homebar {
+  position: absolute;
+  z-index: 15;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 95px;
+  height: 4px;
+  border-radius: 10px;
+  background: #ffffffaa;
+}
+
+/* Pantalla de bloqueo */
+.um-phone-lock {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  padding: 65px 19px 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  background:
+    radial-gradient(
+      ellipse at 70% 35%,
+      color-mix(in srgb,
+        var(--phone-acento) 23%,
+        transparent),
+      transparent 65%
+    ),
+    linear-gradient(155deg, #111a16, #050807);
+
+  transition:
+    transform .6s ease,
+    opacity .5s ease,
+    visibility .6s;
+}
+
+/* Hora de bloqueo */
+.um-phone-time {
+  color: #f0f0f0;
+  font-family: var(--fuente2, sans-serif);
+  font-size: 53px;
+  line-height: 1.2;
+}
+
+.um-phone-date {
+  color: #cfcfcf;
+  font-size: 10px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* Notificación */
+.um-phone-notification {
+  width: 100%;
+  margin-top: 48px;
+  padding: 13px;
+  border: 1px solid #ffffff15;
+  border-left: 2px solid var(--phone-acento);
+  border-radius: 10px;
+  background: #ffffff12;
+  backdrop-filter: blur(8px);
+  text-align: left;
+}
+
+.um-phone-notification strong {
+  display: block;
+  color: var(--phone-acento);
+  font-size: 10px;
+  margin-bottom: 5px;
+}
+
+.um-phone-notification p {
+  margin: 0;
+  color: #eeeeee;
+  font-size: 11px;
+}
+
+.um-phone-unlock-hint {
+  margin-top: auto;
+  margin-bottom: 20px;
+  color: #cccccc;
+  font-size: 9px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* Pantalla de inicio */
+.um-phone-desktop {
+  position: absolute;
+  inset: 0;
+  padding: 65px 17px 30px;
+  background:
+    radial-gradient(
+      ellipse at 85% 10%,
+      color-mix(in srgb,
+        var(--phone-acento) 17%,
+        transparent),
+      transparent 70%
+    ),
+    #0b100e;
+}
+
+.um-phone-greeting {
+  margin-bottom: 35px;
+}
+
+.um-phone-greeting small {
+  display: block;
+  color: var(--phone-acento);
+  font-size: 9px;
+  letter-spacing: 2px;
+}
+
+.um-phone-greeting strong {
+  display: block;
+  margin-top: 5px;
+  color: #eeeeee;
+  font-family: var(--fuente2);
+  font-size: 25px;
+  font-weight: normal;
+}
+
+/* Aplicaciones */
+.um-phone-apps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px 10px;
+}
+
+.um-phone-app {
+  text-align: center;
+  color: #dddddd;
+  font-size: 9px;
+}
+
+.um-phone-app-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  margin: 0 auto 7px;
+  border-radius: 14px;
+  background: color-mix(
+    in srgb,
+    var(--phone-acento) 25%,
+    #111111
+  );
+  border: 1px solid #ffffff12;
+  color: var(--phone-acento);
+  font-size: 22px;
+}
+
+/* Desbloqueo al pasar el ratón */
+.um-phone-interactive:hover .um-phone-lock,
+.um-phone-interactive:focus-within .um-phone-lock {
+  transform: translateY(-100%);
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* Accesibilidad: botón de desbloqueo */
+.um-phone-unlock-button {
+  appearance: none;
+  background: transparent;
+  border: 0;
+  color: #eeeeee;
+  font: inherit;
+  cursor: pointer;
+  letter-spacing: 1px;
+}
+
+/* ==========================================
+   MÓVIL DE MENSAJES
+   ========================================== */
+
+.um-phone-chat {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  padding-top: 37px;
+  padding-bottom: 22px;
+  background: #101513;
+}
+
+/* Contacto */
+.um-chat-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px;
+  border-bottom: 1px solid #ffffff15;
+}
+
+.um-chat-avatar {
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background: var(--phone-acento);
+  color: #080808;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.um-chat-contact {
+  flex: 1;
+  min-width: 0;
+}
+
+.um-chat-contact strong {
+  display: block;
+  color: #eeeeee;
+  font-size: 12px;
+}
+
+.um-chat-contact small {
+  display: block;
+  color: var(--phone-acento);
+  font-size: 9px;
+}
+
+/* Conversación */
+.um-chat-messages {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  padding: 15px 10px;
+  scrollbar-width: thin;
+  scrollbar-color: #ffffff30 transparent;
+}
+
+.um-chat-date {
+  margin: 8px 0 18px;
+  color: #9a9a9a;
+  font-size: 9px;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+/* Burbujas */
+.um-chat-bubble {
+  width: fit-content;
+  max-width: 85%;
+  margin: 0 0 12px;
+  padding: 9px 11px;
+  border-radius: 12px;
+  background: #282e2a;
+  color: #eeeeee;
+  overflow-wrap: anywhere;
+  font-family: var(--fuente3, serif);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.um-chat-bubble p {
+  margin: 0;
+}
+
+.um-chat-bubble small {
+  display: block;
+  margin-top: 4px;
+  color: #aaaaaa;
+  font-family: var(--fuente1);
+  font-size: 8px;
+  text-align: right;
+}
+
+/* Mensajes enviados */
+.um-chat-bubble.sent {
+  margin-left: auto;
+  border-bottom-right-radius: 3px;
+  background: color-mix(
+    in srgb,
+    var(--phone-acento) 32%,
+    #101513
+  );
+  border: 1px solid color-mix(
+    in srgb,
+    var(--phone-acento) 30%,
+    transparent
+  );
+}
+
+/* Mensajes recibidos */
+.um-chat-bubble.received {
+  margin-right: auto;
+  border-bottom-left-radius: 3px;
+}
+
+/* Campo inferior decorativo */
+.um-chat-input {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 10px 10px;
+  padding: 10px 13px;
+  border-radius: 25px;
+  background: #ffffff10;
+  color: #888888;
+  font-size: 10px;
+}
+
+.um-chat-send {
+  color: var(--phone-acento);
+  font-size: 16px;
+}
+
+/* Móviles pequeños */
+@media (max-width: 360px) {
+  .um-phone {
+    width: 280px;
+  }
+}
+
+/* Respeto a movimiento reducido */
+@media (prefers-reduced-motion: reduce) {
+  .um-phone-lock {
+    transition: none;
+  }
+}
