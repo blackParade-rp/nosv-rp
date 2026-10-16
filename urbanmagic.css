@@ -325,3 +325,119 @@
   margin-top: 12px !important;
   padding-top: 8px !important;
 }
+
+
+/* ========================================
+   TABLILLA DE REGISTROS
+   ======================================== */
+
+/* Contenedor de la tabla */
+.um-tabla-scroll {
+  width: 100%;
+  margin: 12px 0;
+  overflow-x: auto;
+}
+
+/* Tabla */
+.um-tabla {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  font-family: var(--fuente1);
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+/* Cabeceras */
+.um-tabla thead th {
+  padding: 12px 10px;
+  color: var(--tab-acento);
+  background: #ffffff08;
+  border-bottom: 1px solid var(--tab-acento);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+/* Celdas */
+.um-tabla tbody td {
+  padding: 12px 10px;
+  border-bottom: 1px solid #ffffff14;
+  color: var(--tab-texto);
+  vertical-align: middle;
+}
+
+/* Filas alternas */
+.um-tabla tbody tr:nth-child(even) {
+  background: #ffffff05;
+}
+
+/* Hover */
+.um-tabla tbody tr:hover {
+  background: #ffffff0c;
+}
+
+/* Enlaces de personajes */
+.um-tabla a {
+  color: var(--tab-acento);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+
+.um-tabla a:hover {
+  border-color: currentColor;
+}
+
+/* Estados */
+.um-estado {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 10px;
+  white-space: nowrap;
+}
+
+.um-estado::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+.um-aceptado {
+  color: #77d59a;
+}
+
+.um-pendiente {
+  color: #e0bd76;
+}
+
+.um-revision {
+  color: #d88c8c;
+}
+
+/* Contador de registros */
+.um-contador {
+  margin: 10px 0;
+  color: var(--tab-acento);
+  font-family: var(--fuente1);
+  font-size: 10px;
+  letter-spacing: 1px;
+  text-align: right;
+  text-transform: uppercase;
+}
+
+/* Móvil */
+@media (max-width: 600px) {
+  .um-tabla {
+    min-width: 440px;
+  }
+
+  .um-tabla thead th,
+  .um-tabla tbody td {
+    padding: 10px 8px;
+  }
+}
