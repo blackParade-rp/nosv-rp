@@ -1594,3 +1594,345 @@
     font-size: 20px;
   }
 }
+
+
+/* ========================================
+   URBAN MAGIC — EXPEDIENTE DE PERSONAJE
+   ======================================== */
+
+.um-expediente {
+  --exp-acento: var(--grupcolor, var(--color2));
+  --exp-fondo: var(--fondo1, #080808db);
+  --exp-texto: var(--textobase, #cfcfcf);
+
+  box-sizing: border-box;
+  position: relative;
+  width: 100%;
+  max-width: 650px;
+  margin: 20px auto;
+  padding: 30px;
+  overflow: hidden;
+
+  background: var(--exp-fondo);
+  border: 1px solid #ffffff18;
+  border-left: 2px solid var(--exp-acento);
+  border-radius: 0 12px 12px 0;
+
+  color: var(--exp-texto);
+  font-family: var(--fuente3, serif);
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+.um-expediente *,
+.um-expediente *::before,
+.um-expediente *::after {
+  box-sizing: border-box;
+}
+
+.um-expediente::before {
+  content: "";
+  position: absolute;
+  top: -100px;
+  right: -100px;
+  width: 270px;
+  height: 270px;
+  background: var(--exp-acento);
+  opacity: .07;
+  border-radius: 50%;
+  filter: blur(70px);
+  pointer-events: none;
+}
+
+.um-expediente > * {
+  position: relative;
+}
+
+/* ========================================
+   CABECERA E IDENTIDAD
+   ======================================== */
+
+.um-exp-codigo {
+  display: block;
+  margin-bottom: 14px;
+  color: var(--exp-acento);
+  font: 9px var(--fuente1, monospace);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.um-exp-identidad {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  margin-bottom: 22px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #ffffff20;
+}
+
+/* Retrato de 150x150 */
+.um-exp-retrato {
+  flex: 0 0 150px;
+  width: 150px;
+  height: 150px;
+  padding: 5px;
+  border: 1px solid var(--exp-acento);
+  border-radius: 8px;
+  background: #ffffff08;
+}
+
+.um-exp-retrato img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.um-exp-identidad-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.um-exp-nombre {
+  margin: 0 0 12px;
+  color: #eeeeee;
+  font: normal 34px/1.15 var(--fuente2, sans-serif);
+  overflow-wrap: anywhere;
+}
+
+.um-exp-frase {
+  margin: 0;
+  padding-left: 12px;
+  border-left: 2px solid var(--exp-acento);
+  color: #bbbbbb;
+  font: italic 16px/1.5 var(--fuente3, serif);
+}
+
+/* ========================================
+   MARCADOR STAEDTLER
+   ======================================== */
+
+.um-exp-marcador {
+  display: table;
+  position: relative;
+  isolation: isolate;
+  max-width: 100%;
+  margin: 16px 0 12px;
+  padding: 2px 8px;
+
+  color: #eeeeee;
+  font: bold 10px/1.5 var(--fuente1, monospace);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.um-exp-marcador::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  right: 0;
+  top: 40%;
+  bottom: 4%;
+  background: var(--exp-acento);
+  opacity: .5;
+  transform: rotate(-1deg) skewX(-4deg);
+  clip-path: polygon(
+    1% 7%, 98% 0%, 100% 90%,
+    97% 100%, 0 94%
+  );
+}
+
+/* ========================================
+   SEIS DATOS PRINCIPALES
+   ======================================== */
+
+.um-exp-datos {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  margin: 12px 0 20px;
+}
+
+.um-exp-dato {
+  padding: 10px 12px;
+  background: #ffffff07;
+  border-bottom: 1px solid #ffffff15;
+  overflow-wrap: anywhere;
+}
+
+.um-exp-dato b {
+  display: block;
+  margin-bottom: 4px;
+  color: var(--exp-acento);
+  font: 9px var(--fuente1, monospace);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.um-exp-dato span {
+  font-size: 13px;
+}
+
+/* ========================================
+   HISTORIA PERSONAL
+   ======================================== */
+
+.um-exp-historia {
+  margin: 10px 0 24px;
+  color: var(--exp-texto);
+  text-align: justify;
+}
+
+.um-exp-historia p {
+  margin: 0 0 12px;
+  line-height: 1.75;
+}
+
+.um-exp-historia strong {
+  color: var(--exp-acento);
+}
+
+/* ========================================
+   IMAGEN + DATOS ADICIONALES
+   ======================================== */
+
+.um-exp-extras {
+  display: flex;
+  align-items: stretch;
+  gap: 14px;
+  margin: 14px 0 20px;
+  height: 180px;
+}
+
+/* Imagen de 130x180 */
+.um-exp-imagen-extra {
+  flex: 0 0 130px;
+  width: 130px;
+  height: 180px;
+  overflow: hidden;
+  border: 1px solid var(--exp-acento);
+  border-radius: 5px;
+}
+
+.um-exp-imagen-extra img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Caja de datos con scroll */
+.um-exp-extras-caja {
+  flex: 1;
+  min-width: 0;
+  height: 180px;
+  min-height: 0;
+  padding: 14px;
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  background: #ffffff07;
+  border-left: 2px solid var(--exp-acento);
+  border-radius: 0 5px 5px 0;
+
+  scrollbar-width: thin;
+  scrollbar-color: var(--exp-acento) #ffffff08;
+}
+
+.um-exp-extras-caja::-webkit-scrollbar {
+  width: 5px;
+}
+
+.um-exp-extras-caja::-webkit-scrollbar-track {
+  background: #ffffff08;
+}
+
+.um-exp-extras-caja::-webkit-scrollbar-thumb {
+  background: var(--exp-acento);
+  border-radius: 10px;
+}
+
+.um-exp-extra-titulo {
+  display: block;
+  margin-bottom: 12px;
+  color: var(--exp-acento);
+  font: bold 10px var(--fuente1, monospace);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.um-exp-extra-item {
+  margin-bottom: 9px;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.um-exp-extra-item b {
+  color: var(--exp-acento);
+  font-family: var(--fuente1, monospace);
+  font-size: 10px;
+}
+
+/* ========================================
+   PIE DEL EXPEDIENTE
+   ======================================== */
+
+.um-exp-pie {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 18px;
+  padding-top: 12px;
+  border-top: 1px solid #ffffff20;
+
+  color: #999999;
+  font: 9px var(--fuente1, monospace);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.um-exp-pie span:last-child {
+  color: var(--exp-acento);
+}
+
+/* ========================================
+   ADAPTACIÓN A MÓVILES
+   ======================================== */
+
+@media (max-width: 480px) {
+  .um-expediente {
+    padding: 18px;
+  }
+
+  .um-exp-identidad {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .um-exp-retrato {
+    flex: 0 0 150px;
+  }
+
+  .um-exp-nombre {
+    font-size: 27px;
+  }
+
+  .um-exp-datos {
+    grid-template-columns: 1fr;
+  }
+
+  .um-exp-extras {
+    gap: 8px;
+  }
+
+  .um-exp-extras-caja {
+    padding: 10px;
+  }
+
+  .um-exp-pie {
+    flex-wrap: wrap;
+  }
+}
