@@ -266,3 +266,62 @@
     right: 20px;
   }
 }
+
+/* ===================================
+   TABLILLA COMPACTA
+   =================================== */
+
+.um-tablilla {
+  padding: 25px 30px !important;
+  line-height: 1.5;
+}
+
+.um-cabecera {
+  margin: 0 0 12px !important;
+  padding: 0 0 12px !important;
+}
+
+.um-etiqueta {
+  margin: 0 0 6px !important;
+}
+
+.um-titulo {
+  margin: 0 0 4px !important;
+  line-height: 1.1 !important;
+}
+
+.um-subtitulo {
+  margin: 0 !important;
+  line-height: 1.2 !important;
+}
+
+.um-contenido {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.um-contenido p {
+  margin: 0 0 8px !important;
+  padding: 0 !important;
+  line-height: 1.5 !important;
+}
+
+.um-marcador {
+  margin: 10px 0 6px !important;
+  padding: 1px 6px;
+  line-height: 1.4 !important;
+}
+
+.um-destacado {
+  margin: 10px 0 !important;
+  padding: 10px 14px;
+}
+
+.um-separador {
+  margin: 12px 0 !important;
+}
+
+.um-pie {
+  margin-top: 12px !important;
+  padding-top: 8px !important;
+}
