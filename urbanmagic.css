@@ -1,0 +1,213 @@
+/* ========================================
+   TABLILLAS — MAGIA URBANA
+   ======================================== */
+
+.um-tablilla {
+  /* Colores */
+  --tab-acento: var(--grupcolor, var(--color2));
+  --tab-fondo: var(--fondo1, #080808db);
+  --tab-texto: var(--textobase, #cfcfcf);
+  --tab-linea: var(--tab-acento);
+
+  /* Tipografías */
+  --tab-fuente-titulo: var(--fuente2, "Tweaky", sans-serif);
+  --tab-fuente-texto: var(--fuente3, "Caladea", serif);
+  --tab-fuente-detalle: var(--fuente1, "SUSE Mono", monospace);
+
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 650px;
+  margin: 25px auto;
+  padding: 38px;
+  position: relative;
+  overflow: hidden;
+
+  background: var(--tab-fondo);
+  color: var(--tab-texto);
+  border: 1px solid #ffffff18;
+  border-top: 3px solid var(--tab-acento);
+  box-shadow: 0 12px 35px #00000055;
+
+  font-family: var(--tab-fuente-texto);
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+/* Evita problemas de anchura */
+.um-tablilla *,
+.um-tablilla *::before,
+.um-tablilla *::after {
+  box-sizing: border-box;
+}
+
+/* Luz sobrenatural decorativa */
+.um-tablilla::before {
+  content: "";
+  position: absolute;
+  top: -110px;
+  right: -110px;
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  background: var(--tab-acento);
+  opacity: .09;
+  filter: blur(75px);
+  pointer-events: none;
+}
+
+/* Cabecera */
+.um-cabecera {
+  position: relative;
+  margin-bottom: 28px;
+  padding-bottom: 22px;
+  border-bottom: 1px solid #ffffff20;
+}
+
+/* Etiqueta superior */
+.um-etiqueta {
+  display: block;
+  margin-bottom: 12px;
+  color: var(--tab-acento);
+  font: 10px var(--tab-fuente-detalle);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+/* TÍTULO 1: fuente principal */
+.um-titulo {
+  margin: 0 0 8px;
+  color: var(--tab-acento);
+  font-family: var(--tab-fuente-titulo);
+  font-size: clamp(26px, 5vw, 42px);
+  font-weight: normal;
+  line-height: 1.2;
+  overflow-wrap: anywhere;
+}
+
+/* TÍTULO 2: fuente de lectura */
+.um-subtitulo {
+  margin: 0;
+  color: #e5e5e5;
+  font-family: var(--tab-fuente-texto);
+  font-size: 20px;
+  font-weight: normal;
+  font-style: italic;
+  line-height: 1.4;
+}
+
+/* TÍTULO 3: marcador Staedtler */
+.um-marcador {
+  display: table;
+  position: relative;
+  isolation: isolate;
+  max-width: 100%;
+  margin: 24px 0 14px;
+  padding: 2px 8px;
+
+  color: #f4f4f4;
+  font-family: var(--tab-fuente-detalle);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  line-height: 1.8;
+  text-transform: uppercase;
+  overflow-wrap: anywhere;
+}
+
+.um-marcador::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  right: 0;
+  top: 38%;
+  bottom: 5%;
+
+  background: var(--tab-acento);
+  opacity: .48;
+  transform: rotate(-1deg) skewX(-5deg);
+  clip-path: polygon(
+    1% 8%, 98% 0%, 100% 90%,
+    97% 100%, 0% 94%
+  );
+}
+
+/* Texto */
+.um-contenido {
+  position: relative;
+  text-align: justify;
+}
+
+.um-contenido p {
+  margin: 0 0 16px;
+  line-height: 1.85;
+}
+
+.um-contenido strong {
+  color: var(--tab-acento);
+  font-weight: bold;
+}
+
+/* Separadores */
+.um-separador {
+  height: 1px;
+  margin: 26px 0;
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--tab-acento),
+    transparent
+  );
+  opacity: .65;
+}
+
+/* Recuadro destacado */
+.um-destacado {
+  margin: 22px 0;
+  padding: 16px 20px;
+  background: #ffffff08;
+  border-left: 3px solid var(--tab-acento);
+  font-style: italic;
+}
+
+/* Pie de tablilla */
+.um-pie {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 30px;
+  padding-top: 14px;
+  border-top: 1px solid #ffffff18;
+
+  color: var(--tab-acento);
+  font: 10px var(--tab-fuente-detalle);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* Enlaces propios */
+.um-tablilla a {
+  color: var(--tab-acento);
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+}
+
+/* Adaptación a móviles */
+@media (max-width: 600px) {
+  .um-tablilla {
+    padding: 22px;
+    margin: 15px auto;
+  }
+
+  .um-titulo {
+    font-size: 29px;
+  }
+
+  .um-subtitulo {
+    font-size: 17px;
+  }
+
+  .um-pie {
+    flex-wrap: wrap;
+  }
+}
