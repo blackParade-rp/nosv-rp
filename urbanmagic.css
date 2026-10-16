@@ -1263,3 +1263,332 @@
     font-size: 18px;
   }
 }
+
+
+/* ========================================
+   URBAN MAGIC — BÚSQUEDAS
+   ======================================== */
+
+.um-busqueda {
+  --bus-acento: var(--grupcolor, var(--color2));
+  --bus-texto: var(--textobase, #cfcfcf);
+
+  box-sizing: border-box;
+  position: relative;
+  width: 100%;
+  max-width: 650px;
+  margin: 20px auto;
+  padding: 30px;
+  overflow: hidden;
+
+  background: var(--fondo1, #080808db);
+  border: 1px solid #ffffff18;
+  border-left: 2px solid var(--bus-acento);
+  border-radius: 0 12px 12px 0;
+
+  color: var(--bus-texto);
+  font-family: var(--fuente3, serif);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.um-busqueda *,
+.um-busqueda *::before,
+.um-busqueda *::after {
+  box-sizing: border-box;
+}
+
+.um-busqueda::before {
+  content: "";
+  position: absolute;
+  right: -100px;
+  top: -110px;
+  width: 270px;
+  height: 270px;
+  border-radius: 50%;
+  background: var(--bus-acento);
+  opacity: .07;
+  filter: blur(70px);
+  pointer-events: none;
+}
+
+.um-busqueda > * {
+  position: relative;
+}
+
+/* Cabecera */
+.um-bus-cabecera {
+  margin-bottom: 18px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #ffffff20;
+}
+
+.um-bus-codigo {
+  display: block;
+  margin-bottom: 9px;
+  color: var(--bus-acento);
+  font: 9px var(--fuente1, monospace);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.um-bus-titulo {
+  margin: 0 0 5px;
+  color: #eeeeee;
+  font: normal 32px/1.2 var(--fuente2, sans-serif);
+  overflow-wrap: anywhere;
+}
+
+.um-bus-subtitulo {
+  color: #aaaaaa;
+  font: italic 15px var(--fuente3, serif);
+}
+
+.um-bus-intro {
+  margin: 0 0 16px;
+  text-align: justify;
+}
+
+.um-bus-intro p {
+  margin: 0;
+}
+
+/* Marcador Staedtler */
+.um-bus-marcador {
+  display: table;
+  position: relative;
+  isolation: isolate;
+  max-width: 100%;
+  margin: 16px 0 10px;
+  padding: 2px 7px;
+  color: #eeeeee;
+  font: bold 10px/1.5 var(--fuente1, monospace);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.um-bus-marcador::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 40% 0 4%;
+  background: var(--bus-acento);
+  opacity: .5;
+  transform: rotate(-1deg) skewX(-4deg);
+}
+
+/* ========================================
+   BÚSQUEDA DE TRAMAS
+   ======================================== */
+
+.um-trama {
+  margin: 0;
+  padding: 18px 0;
+  border-bottom: 1px solid #ffffff18;
+}
+
+.um-trama:last-child {
+  border-bottom: 0;
+}
+
+.um-trama-superior {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.um-trama-numero {
+  color: var(--bus-acento);
+  font: 9px var(--fuente1, monospace);
+  letter-spacing: 2px;
+}
+
+.um-trama-titulo {
+  margin: 0 0 10px;
+  color: #eeeeee;
+  font: normal 23px var(--fuente2, sans-serif);
+  overflow-wrap: anywhere;
+}
+
+.um-trama-cuerpo {
+  padding-left: 15px;
+  border-left: 2px solid var(--bus-acento);
+}
+
+.um-trama-cuerpo p {
+  margin: 10px 0;
+  line-height: 1.65;
+  text-align: justify;
+}
+
+.um-bus-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin: 8px 0;
+}
+
+.um-bus-tag {
+  padding: 4px 8px;
+  background: #ffffff0b;
+  border-left: 2px solid var(--bus-acento);
+  color: #dddddd;
+  font: 9px var(--fuente1, monospace);
+  text-transform: uppercase;
+}
+
+/* Estados */
+.um-bus-estado {
+  padding: 4px 8px;
+  border: 1px solid #ffffff25;
+  border-radius: 3px;
+  font: 9px var(--fuente1, monospace);
+  text-transform: uppercase;
+}
+
+.um-bus-disponible {
+  color: var(--bus-acento);
+  border-color: var(--bus-acento);
+}
+
+.um-bus-reservada {
+  color: #c7ad79;
+  border-color: #c7ad7955;
+}
+
+.um-bus-cerrada {
+  color: #999999;
+  border-color: #ffffff25;
+}
+
+.um-bus-enlace {
+  display: inline-block;
+  margin-top: 6px;
+  color: var(--bus-acento) !important;
+  font: 10px var(--fuente1, monospace);
+  text-decoration: none;
+}
+
+/* ========================================
+   BÚSQUEDA DE PERSONAJES
+   ======================================== */
+
+.um-buscado-cabecera {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 18px;
+}
+
+.um-buscado-imagen {
+  flex: 0 0 125px;
+  width: 125px;
+  height: 125px;
+  padding: 5px;
+  border: 1px solid var(--bus-acento);
+  border-radius: 7px;
+}
+
+.um-buscado-imagen img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 3px;
+}
+
+.um-buscado-identidad {
+  flex: 1;
+  min-width: 0;
+}
+
+.um-buscado-identidad .um-bus-titulo {
+  color: var(--bus-acento);
+}
+
+.um-buscado-identidad .um-bus-estado {
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.um-buscado-datos {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  margin: 14px 0;
+}
+
+.um-buscado-dato {
+  padding: 10px 12px;
+  background: #ffffff07;
+  border-bottom: 1px solid #ffffff15;
+  overflow-wrap: anywhere;
+}
+
+.um-buscado-dato b {
+  display: block;
+  margin-bottom: 4px;
+  color: var(--bus-acento);
+  font: 9px var(--fuente1, monospace);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.um-buscado-dato span {
+  font-size: 13px;
+}
+
+.um-buscado-texto {
+  margin: 8px 0 16px;
+  text-align: justify;
+}
+
+.um-buscado-texto p {
+  margin: 0 0 10px;
+}
+
+/* Pie de búsqueda */
+.um-bus-pie {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 18px;
+  padding-top: 12px;
+  border-top: 1px solid #ffffff20;
+}
+
+.um-bus-pie a {
+  color: var(--bus-acento);
+  font: 10px var(--fuente1, monospace);
+  text-decoration: none;
+}
+
+.um-bus-pie span {
+  color: #888888;
+  font: 9px var(--fuente1, monospace);
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .um-busqueda {
+    padding: 18px;
+  }
+
+  .um-buscado-cabecera {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .um-buscado-datos {
+    grid-template-columns: 1fr;
+  }
+
+  .um-trama-titulo {
+    font-size: 20px;
+  }
+}
