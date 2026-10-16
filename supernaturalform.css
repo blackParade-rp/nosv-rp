@@ -334,3 +334,17 @@
     font-size: 29px;
   }
 }
+
+/* ICONOS GAME ICONS — SUPERNATURAL FORM */
+
+.sf-post .sf-icono {
+  color: var(--sf-acento);
+  font-size: 20px;
+  line-height: 1;
+}
+
+.sf-post .sf-icono i[class*="game-icon"] {
+  color: inherit;
+  font-style: normal;
+  text-decoration: none;
+}
