@@ -1936,3 +1936,140 @@
     flex-wrap: wrap;
   }
 }
+
+
+/* ========================================
+   URBAN MAGIC — AVISOS ADMINISTRATIVOS
+   ======================================== */
+
+.um-aviso {
+  --aviso-acento: var(--grupcolor, var(--color2));
+
+  box-sizing: border-box;
+  position: relative;
+  width: 100%;
+  max-width: 460px;
+  margin: 15px auto;
+  padding: 19px 23px;
+  overflow: hidden;
+
+  background: var(--fondo1, #080808db);
+  border: 1px solid #ffffff18;
+  border-left: 3px solid var(--aviso-acento);
+  border-radius: 0 9px 9px 0;
+
+  color: var(--textobase, #cfcfcf);
+  font-family: var(--fuente3, serif);
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.um-aviso *,
+.um-aviso *::before,
+.um-aviso *::after {
+  box-sizing: border-box;
+}
+
+/* Luz ambiental */
+.um-aviso::before {
+  content: "";
+  position: absolute;
+  top: -65px;
+  right: -65px;
+  width: 170px;
+  height: 170px;
+  border-radius: 50%;
+  background: var(--aviso-acento);
+  opacity: .07;
+  filter: blur(40px);
+  pointer-events: none;
+}
+
+.um-aviso > * {
+  position: relative;
+}
+
+/* Cabecera */
+.um-aviso-cabecera {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.um-aviso-codigo {
+  color: var(--aviso-acento);
+  font: 9px var(--fuente1, monospace);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.um-aviso-icono {
+  color: var(--aviso-acento);
+  font: 21px/1 var(--fuente1, monospace);
+}
+
+/* Título */
+.um-aviso-titulo {
+  margin: 0;
+  color: #eeeeee;
+  font: normal 23px/1.2 var(--fuente2, sans-serif);
+  overflow-wrap: anywhere;
+}
+
+/* Línea de acento */
+.um-aviso-linea {
+  width: 65px;
+  height: 2px;
+  margin: 11px 0;
+  background: var(--aviso-acento);
+  opacity: .8;
+}
+
+/* Mensaje */
+.um-aviso-texto {
+  color: var(--textobase, #cfcfcf);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.um-aviso-texto p {
+  margin: 0;
+}
+
+.um-aviso-texto p + p {
+  margin-top: 8px;
+}
+
+/* Pie */
+.um-aviso-pie {
+  margin-top: 13px;
+  color: var(--aviso-acento);
+  font: 9px var(--fuente1, monospace);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* Enlaces opcionales */
+.um-aviso a {
+  color: var(--aviso-acento);
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+}
+
+.um-aviso a:hover {
+  color: #ffffff;
+}
+
+/* Adaptación móvil */
+@media (max-width: 480px) {
+  .um-aviso {
+    padding: 16px 18px;
+  }
+
+  .um-aviso-titulo {
+    font-size: 21px;
+  }
+}
+
