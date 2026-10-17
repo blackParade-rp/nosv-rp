@@ -4,7 +4,7 @@
 
 .um-tablilla {
   /* Colores */
-  --tab-acento: var(--grupcolor, var(--color2));
+  --tab-acento: var(--tab-color-manual, var(--grupcolor, var(--color2)));
   --tab-fondo: var(--fondo1, #080808db);
   --tab-texto: var(--textobase, #cfcfcf);
   --tab-linea: var(--tab-acento);
