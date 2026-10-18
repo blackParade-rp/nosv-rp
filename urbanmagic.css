@@ -2307,3 +2307,16 @@
     font-size: 19px;
   }
 }
+
+/* TEXTOS DE LAS TABLILLAS URBAN MAGIC */
+
+.um-tablilla,
+.um-baul,
+.um-busqueda,
+.um-cron-global,
+.um-aviso,
+.um-expediente {
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 11px;
+  line-height: 1.8;
+}
