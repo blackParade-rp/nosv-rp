@@ -2227,7 +2227,7 @@
 
 .um-cron-evento-texto {
   color: var(--textobase, #cfcfcf);
-  font-size: 13px;
+  font-size: 11px;
   line-height: 1.7;
   text-align: justify;
 }
