@@ -9,6 +9,7 @@
   --sf-acento: var(--grupcolor, var(--color2, #55e073));
   --sf-fondo: var(--fondo1, #080808db);
   --sf-texto: var(--textobase, #cfcfcf);
+  --sf-fuente-texto: Verdana, Geneva, sans-serif;
 
   box-sizing: border-box;
   position: relative;
@@ -106,6 +107,9 @@
 
 .sf-cuerpo {
   color: var(--sf-texto);
+  font-family: var(--sf-fuente-texto);
+  font-size: 12px;
+  line-height: 1.9;
   text-align: justify;
 }
 
